@@ -8,32 +8,31 @@ class CustomBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 32,
-            ),
-            CustomTextField(
-              text: 'Title',
-              maxLines: 1,
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTextField(
-              text: 'Content',
-              maxLines: 6,
-            ),
-            SizedBox(
-              height: 32,
-            ),
-            CustomButton(color: KprimaryColor, text: 'Add',),
-          ],
-        ),
+    return Padding(
+      padding: EdgeInsets.only(
+        left: 12,
+        right: 12,
+        bottom: MediaQuery.of(context).viewInsets.bottom + 16, // Adjust for keyboard
+      ),
+      child: ListView(
+        shrinkWrap: true, // Prevents the list from taking all available space
+        children: [
+          SizedBox(height: 32),
+          CustomTextField(
+            text: 'Title',
+            maxLines: 1,
+          ),
+          SizedBox(height: 24),
+          CustomTextField(
+            text: 'Content',
+            maxLines: 6,
+          ),
+          SizedBox(height: 32),
+          CustomButton(
+            color: KprimaryColor,
+            text: 'Add',
+          ),
+        ],
       ),
     );
   }
