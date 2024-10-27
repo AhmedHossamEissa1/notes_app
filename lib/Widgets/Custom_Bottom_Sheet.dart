@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/Widgets/Custom_button.dart';
 import 'package:notes_app/Widgets/Custom_textField.dart';
+import 'package:notes_app/constants.dart';
 
 class CustomBottomSheet extends StatelessWidget {
   const CustomBottomSheet({super.key});
@@ -26,6 +28,10 @@ class CustomBottomSheet extends StatelessWidget {
               text: 'Content',
               maxLines: 6,
             ),
+            SizedBox(
+              height: 32,
+            ),
+            CustomButton(color: KprimaryColor, text: 'Add',),
           ],
         ),
       ),
