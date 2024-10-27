@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class CustomNoteCard extends StatelessWidget {
   const CustomNoteCard({super.key});
 
@@ -11,7 +10,8 @@ class CustomNoteCard extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-              color: Colors.orange, borderRadius: BorderRadius.circular(16)),
+              color: Colors.orange.shade300,
+              borderRadius: BorderRadius.circular(16)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
