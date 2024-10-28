@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
         contentPadding: EdgeInsets.symmetric(vertical: 18, horizontal: 24),
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: text,
-        labelStyle: TextStyle(color: KprimaryColor),
+        labelStyle: TextStyle(color: kPrimaryColor),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: Colors.white),

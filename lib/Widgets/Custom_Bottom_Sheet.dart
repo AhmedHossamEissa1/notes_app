@@ -29,7 +29,7 @@ class CustomBottomSheet extends StatelessWidget {
           ),
           SizedBox(height: 32),
           CustomButton(
-            color: KprimaryColor,
+            color: kPrimaryColor,
             text: 'Add',
           ),
         ],
