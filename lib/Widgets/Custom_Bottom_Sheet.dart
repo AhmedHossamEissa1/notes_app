@@ -23,33 +23,36 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: 12,
-        right: 12,
-        bottom: MediaQuery.of(context).viewInsets.bottom +
-            16, // Adjust for keyboard
-      ),
-      child: ListView(
-        shrinkWrap: true, // Prevents the list from taking all available space
-        children: [
-          SizedBox(height: 32),
-          BlocConsumer<AddNoteCubit, AddNoteState>(
-            listener: (context, state) {
-              if (state is AddNoteSuccess) {
-                Navigator.pop(context);
-              }
-              if (state is AddNoteFail) {
-                print('failed');
-              }
-            },
-            builder: (context, state) {
-              return ModalProgressHUD(
-                  inAsyncCall: state is AddNoteLoading ? true : false,
-                  child: AddForm(globalKey: globalKey,));
-            },
-          ),
-        ],
+    return BlocProvider(
+      create: (context) => AddNoteCubit(),
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 12,
+          right: 12,
+          bottom: MediaQuery.of(context).viewInsets.bottom +
+              16, // Adjust for keyboard
+        ),
+        child: 
+            BlocConsumer<AddNoteCubit, AddNoteState>(
+              listener: (context, state) {
+                if (state is AddNoteSuccess) {
+                  Navigator.pop(context);
+                }
+                if (state is AddNoteFail) {
+                  print('failed');
+                }
+              },
+              builder: (context, state) {
+                return ModalProgressHUD(
+                    inAsyncCall: state is AddNoteLoading ? true : false,
+                    child: SingleChildScrollView(
+                      child: AddForm(
+                        globalKey: globalKey,
+                      ),
+                    ));
+              },
+            ),
+          
       ),
     );
   }
