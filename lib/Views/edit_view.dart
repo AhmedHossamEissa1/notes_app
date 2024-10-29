@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/Widgets/Custom_Appbar.dart';
-import 'package:notes_app/Widgets/Custom_button.dart';
 import 'package:notes_app/Widgets/Custom_textField.dart';
-import 'package:notes_app/Widgets/add_form.dart';
 
-import 'package:notes_app/constants.dart';
 
 class EditView extends StatefulWidget {
   EditView({super.key});
