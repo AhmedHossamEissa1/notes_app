@@ -2,25 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.color, required this.text});
+  const CustomButton({super.key, required this.color, required this.text, this.onTab});
 
   final Color color;
   final String text;
+  final void Function()? onTab;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      height: 50,
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-              color: Colors.black, fontWeight: FontWeight.w700, fontSize: 16),
+    return GestureDetector(
+      onTap: onTab,
+      child: Container(
+        width: double.infinity,
+        height: 50,
+        child: Center(
+          child: Text(
+            text,
+            style: TextStyle(
+                color: Colors.black, fontWeight: FontWeight.w700, fontSize: 16),
+          ),
         ),
+        decoration:
+            BoxDecoration(color: color, borderRadius: BorderRadius.circular(6)),
       ),
-      decoration:
-          BoxDecoration(color: color, borderRadius: BorderRadius.circular(6)),
     );
   }
 }

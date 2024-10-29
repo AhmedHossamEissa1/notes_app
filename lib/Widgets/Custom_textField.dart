@@ -4,13 +4,23 @@ import 'package:notes_app/constants.dart';
 class CustomTextField extends StatelessWidget {
   final int maxLines;
   final String text;
-
+  final void Function(String?)? onSaved;
   const CustomTextField(
-      {super.key, required this.text, required this.maxLines});
+      {super.key, required this.text, required this.maxLines, this.onSaved});
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (value) {
+        {
+          if (value == '') {
+            return 'Required field';
+          } else {
+            return null;
+          }
+        }
+      },
+      onSaved: onSaved,
       maxLines: maxLines,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.symmetric(vertical: 18, horizontal: 24),
@@ -23,7 +33,7 @@ class CustomTextField extends StatelessWidget {
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: const Color.fromARGB(255, 26, 68, 58)),
+          borderSide: BorderSide(color: kPrimaryColor),
         ),
       ),
     );
