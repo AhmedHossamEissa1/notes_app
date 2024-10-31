@@ -20,7 +20,6 @@ class _EditFormState extends State<AddForm> {
 
   String? title;
   String? description;
-  
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +53,8 @@ class _EditFormState extends State<AddForm> {
                   NoteModel note = NoteModel(
                       title: title!,
                       description: description!,
-                      date: DateTime.now().toString(),
+                      date:
+                          '${DateTime.now().year.toString()}-${DateTime.now().month.toString()}-${DateTime.now().day.toString()}',
                       color: Colors.blue.value);
                   BlocProvider.of<AddNoteCubit>(context).addNote(note);
                 } else {
