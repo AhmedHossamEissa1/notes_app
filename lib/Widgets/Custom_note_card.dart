@@ -40,7 +40,9 @@ class CustomNoteCard extends StatelessWidget {
                     ),
                   ),
                   trailing: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        note.delete();
+                      },
                       icon: Icon(
                         FontAwesomeIcons.trash,
                         size: 24,
