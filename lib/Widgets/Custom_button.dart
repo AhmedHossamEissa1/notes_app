@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.color, required this.text, this.onTab});
-
+  const CustomButton(
+      {super.key, required this.color, required this.text, this.onTab,  this.isLoading=false});
+  final bool isLoading;
   final Color color;
   final String text;
   final void Function()? onTab;

@@ -32,27 +32,31 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
           bottom: MediaQuery.of(context).viewInsets.bottom +
               16, // Adjust for keyboard
         ),
-        child: 
-            BlocConsumer<AddNoteCubit, AddNoteState>(
-              listener: (context, state) {
-                if (state is AddNoteSuccess) {
-                  Navigator.pop(context);
-                }
-                if (state is AddNoteFail) {
-                  print('failed');
-                }
-              },
-              builder: (context, state) {
-                return ModalProgressHUD(
-                    inAsyncCall: state is AddNoteLoading ? true : false,
-                    child: SingleChildScrollView(
-                      child: AddForm(
-                        globalKey: globalKey,
-                      ),
-                    ));
-              },
-            ),
-          
+        child: BlocConsumer<AddNoteCubit, AddNoteState>(
+          listener: (context, state) {
+            if (state is AddNoteSuccess) {
+              Navigator.pop(context);
+            }
+            if (state is AddNoteFail) {
+              print('failed');
+            }
+          },
+          builder: (context, state) {
+            return ModalProgressHUD(
+              inAsyncCall: state is AddNoteLoading,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize:
+                      MainAxisSize.min, // Important for keeping the size
+                  children: [
+                    AddForm(globalKey: globalKey),
+                    SizedBox(height: 20), // Add some spacing if needed
+                  ],
+                ),
+              ),
+            );
+          },
+        ),
       ),
     );
   }

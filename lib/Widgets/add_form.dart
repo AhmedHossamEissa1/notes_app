@@ -20,6 +20,7 @@ class _EditFormState extends State<AddForm> {
 
   String? title;
   String? description;
+  
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,7 @@ class _EditFormState extends State<AddForm> {
         key: formlKey,
         child: Column(
           children: [
+            SizedBox(height: 30),
             CustomTextField(
               onSaved: (value) {
                 title = value;
@@ -63,6 +65,7 @@ class _EditFormState extends State<AddForm> {
               color: kPrimaryColor,
               text: 'Add',
             ),
+            SizedBox(height: 24),
           ],
         ));
   }
