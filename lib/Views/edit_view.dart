@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/Cubets/notes_cubit/notes_cubit.dart';
+import 'package:notes_app/Models/note_model.dart';
 import 'package:notes_app/Widgets/Custom_Appbar.dart';
 import 'package:notes_app/Widgets/Custom_textField.dart';
 
-
 class EditView extends StatefulWidget {
-  EditView({super.key});
+  final NoteModel note;
+  EditView({super.key, required this.note});
 
   @override
   State<EditView> createState() => _EditViewState();
@@ -29,18 +32,29 @@ class _EditViewState extends State<EditView> {
             children: [
               CustomAppbar(
                 onPressed: () {
-                 
+                  widget.note.title = title ?? widget.note.title;
+                  widget.note.description =
+                      description ?? widget.note.description;
+                  widget.note.save();
+                  BlocProvider.of<NotesCubit>(context).getAllNotes();
+                  Navigator.pop(context);
                 },
                 text: 'Edit Note',
                 icon: Icons.check,
               ),
               SizedBox(height: 32),
               CustomTextField(
+                onChanged: (value) {
+                  title = value;
+                },
                 text: 'Title',
                 maxLines: 1,
               ),
               SizedBox(height: 32),
               CustomTextField(
+                onChanged: (value) {
+                  description = value;
+                },
                 text: 'Content',
                 maxLines: 5,
               )

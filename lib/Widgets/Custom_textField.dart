@@ -5,8 +5,9 @@ class CustomTextField extends StatelessWidget {
   final int maxLines;
   final String text;
   final void Function(String?)? onSaved;
+  final Function(String)? onChanged;
   const CustomTextField(
-      {super.key, required this.text, required this.maxLines, this.onSaved});
+      {super.key, required this.text, required this.maxLines, this.onSaved, this.onChanged});
 
   @override
   Widget build(BuildContext context) {
@@ -20,6 +21,7 @@ class CustomTextField extends StatelessWidget {
           }
         }
       },
+      onChanged: onChanged,
       onSaved: onSaved,
       maxLines: maxLines,
       decoration: InputDecoration(
