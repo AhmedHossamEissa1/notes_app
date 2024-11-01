@@ -11,9 +11,8 @@ class NotesCubit extends Cubit<NotesState> {
 
   List<NoteModel>? notes;
   getAllNotes() {
-    
-    // await Future.delayed(Duration(seconds: 1));
     var box = Hive.box<NoteModel>(kNoteBox);
     notes = box.values.toList();
+    emit(NotesSuccess());
   }
 }

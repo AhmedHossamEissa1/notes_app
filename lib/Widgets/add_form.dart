@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubets/add_note_cubit/add_note_cubit.dart';
+import 'package:notes_app/Cubets/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/Models/note_model.dart';
 import 'package:notes_app/Widgets/Custom_button.dart';
 import 'package:notes_app/Widgets/Custom_textField.dart';
@@ -57,6 +58,7 @@ class _EditFormState extends State<AddForm> {
                           '${DateTime.now().year.toString()}-${DateTime.now().month.toString()}-${DateTime.now().day.toString()}',
                       color: Colors.blue.value);
                   BlocProvider.of<AddNoteCubit>(context).addNote(note);
+                  
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});
