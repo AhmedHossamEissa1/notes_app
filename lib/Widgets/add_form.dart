@@ -46,7 +46,7 @@ class _EditFormState extends State<AddForm> {
               text: 'Content',
               maxLines: 6,
             ),
-            SizedBox(height: 32),
+            SizedBox(height: 16),
             ColorsListView(),
             CustomButton(
               onTab: () {
@@ -73,4 +73,3 @@ class _EditFormState extends State<AddForm> {
         ));
   }
 }
-
