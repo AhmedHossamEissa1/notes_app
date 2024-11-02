@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/Cubets/add_note_cubit/add_note_cubit.dart';
 
 class ColorsListView extends StatefulWidget {
-  const ColorsListView({super.key});
+  ColorsListView({super.key});
 
   @override
   State<ColorsListView> createState() => _ColorsListViewState();
@@ -17,6 +19,8 @@ class _ColorsListViewState extends State<ColorsListView> {
   ];
   bool? isChoosen;
   int? turn;
+  Color color = Color(0xfff15bb5);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,6 +31,7 @@ class _ColorsListViewState extends State<ColorsListView> {
           scrollDirection: Axis.horizontal,
           itemCount: colors.length,
           itemBuilder: (context, index) {
+            BlocProvider.of<AddNoteCubit>(context).color = color;
             return turn == index
                 ? Padding(
                     padding: const EdgeInsets.only(right: 20),
@@ -44,6 +49,10 @@ class _ColorsListViewState extends State<ColorsListView> {
                     child: GestureDetector(
                       onTap: () {
                         turn = index;
+
+                        color = colors[index];
+                        BlocProvider.of<AddNoteCubit>(context).color = color;
+
                         setState(() {});
                       },
                       child: CircleAvatar(
