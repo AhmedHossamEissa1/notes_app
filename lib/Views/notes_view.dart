@@ -23,9 +23,9 @@ class _NotesViewState extends State<NotesView> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
-          shape: CircleBorder(),
+          shape:const CircleBorder(),
           backgroundColor: Color(0xff26CFBC),
-          child: Icon(
+          child:const Icon(
             Icons.add,
             color: Colors.black,
           ),
@@ -36,12 +36,12 @@ class _NotesViewState extends State<NotesView> {
                     borderRadius: BorderRadius.circular(16)),
                 context: context,
                 builder: (context) {
-                  return CustomBottomSheet();
+                  return const CustomBottomSheet();
                 });
           },
         ),
-        body: Padding(
-            padding: const EdgeInsets.only(top: 30, left: 16, right: 16),
+        body:const Padding(
+            padding:  EdgeInsets.only(top: 30, left: 16, right: 16),
             child: Column(
               children: [
                 CustomAppbar(

@@ -3,10 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/Cubets/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_app/Cubets/notes_cubit/notes_cubit.dart';
-import 'package:notes_app/Widgets/Custom_button.dart';
-import 'package:notes_app/Widgets/Custom_textField.dart';
 import 'package:notes_app/Widgets/add_form.dart';
-import 'package:notes_app/constants.dart';
+
 
 class CustomBottomSheet extends StatefulWidget {
   const CustomBottomSheet({super.key});
@@ -52,7 +50,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                       MainAxisSize.min, // Important for keeping the size
                   children: [
                     AddForm(globalKey: globalKey),
-                    SizedBox(height: 20), // Add some spacing if needed
+                   const SizedBox(height: 20), // Add some spacing if needed
                   ],
                 ),
               ),

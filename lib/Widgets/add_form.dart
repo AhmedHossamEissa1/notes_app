@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubets/add_note_cubit/add_note_cubit.dart';
-import 'package:notes_app/Cubets/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/Models/note_model.dart';
 import 'package:notes_app/Widgets/Custom_button.dart';
 import 'package:notes_app/Widgets/Custom_textField.dart';
@@ -31,7 +30,7 @@ class _EditFormState extends State<AddForm> {
         key: formlKey,
         child: Column(
           children: [
-            SizedBox(height: 30),
+           const SizedBox(height: 30),
             CustomTextField(
               onSaved: (value) {
                 title = value;
@@ -39,7 +38,7 @@ class _EditFormState extends State<AddForm> {
               text: 'Title',
               maxLines: 1,
             ),
-            SizedBox(height: 24),
+          const  SizedBox(height: 24),
             CustomTextField(
               onSaved: (value) {
                 description = value;
@@ -47,7 +46,7 @@ class _EditFormState extends State<AddForm> {
               text: 'Content',
               maxLines: 6,
             ),
-            SizedBox(height: 16),
+           const SizedBox(height: 16),
             ColorsListView(),
             CustomButton(
               onTab: () {
@@ -69,7 +68,7 @@ class _EditFormState extends State<AddForm> {
               color: kPrimaryColor,
               text: 'Add',
             ),
-            SizedBox(height: 24),
+           const SizedBox(height: 24),
           ],
         ));
   }

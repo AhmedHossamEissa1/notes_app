@@ -10,7 +10,7 @@ class EditColorsListView extends StatefulWidget {
 }
 
 class _EditColorsPageState extends State<EditColorsListView> {
-  List<Color> colors = [
+  List<Color> colors =const [
     Color(0xff9b5de5),
     Color(0xfff15bb5),
     Color(0xfffee440),

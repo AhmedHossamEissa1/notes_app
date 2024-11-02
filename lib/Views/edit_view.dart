@@ -4,7 +4,6 @@ import 'package:notes_app/Cubets/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/Models/note_model.dart';
 import 'package:notes_app/Widgets/Custom_Appbar.dart';
 import 'package:notes_app/Widgets/Custom_textField.dart';
-import 'package:notes_app/Widgets/colors_list_view.dart';
 import 'package:notes_app/Widgets/edit_colors_list_view.dart';
 
 class EditView extends StatefulWidget {
@@ -44,7 +43,7 @@ class _EditViewState extends State<EditView> {
                 text: 'Edit Note',
                 icon: Icons.check,
               ),
-              SizedBox(height: 32),
+           const   SizedBox(height: 32),
               CustomTextField(
                 onChanged: (value) {
                   title = value;
@@ -52,7 +51,7 @@ class _EditViewState extends State<EditView> {
                 text: 'Title',
                 maxLines: 1,
               ),
-              SizedBox(height: 32),
+            const  SizedBox(height: 32),
               CustomTextField(
                 onChanged: (value) {
                   description = value;
@@ -60,7 +59,7 @@ class _EditViewState extends State<EditView> {
                 text: 'Content',
                 maxLines: 5,
               ),
-              SizedBox(
+            const  SizedBox(
                 height: 20,
               ),
               EditColorsListView(note: widget.note,),

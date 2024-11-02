@@ -29,9 +29,9 @@ class CustomNoteCard extends StatelessWidget {
                 ListTile(
                   title: Text(
                     note.title,
-                    style: TextStyle(color: Colors.black, fontSize: 26),
+                    style:const TextStyle(color: Colors.black, fontSize: 26),
                   ),
-                  contentPadding: EdgeInsets.all(30),
+                  contentPadding:const EdgeInsets.all(30),
                   horizontalTitleGap: 60,
                   iconColor: Colors.black,
                   subtitle: Padding(
@@ -47,7 +47,7 @@ class CustomNoteCard extends StatelessWidget {
                         BlocProvider.of<NotesCubit>(context).getAllNotes();
                         
                       },
-                      icon: Icon(
+                      icon:const Icon(
                         FontAwesomeIcons.trash,
                         size: 24,
                       )),

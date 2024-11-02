@@ -25,17 +25,17 @@ class CustomTextField extends StatelessWidget {
       onSaved: onSaved,
       maxLines: maxLines,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 18, horizontal: 24),
+        contentPadding:const EdgeInsets.symmetric(vertical: 18, horizontal: 24),
         floatingLabelBehavior: FloatingLabelBehavior.never,
         labelText: text,
-        labelStyle: TextStyle(color: kPrimaryColor),
+        labelStyle:const TextStyle(color: kPrimaryColor),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: Colors.white),
+          borderSide:const BorderSide(color: Colors.white),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8),
-          borderSide: BorderSide(color: kPrimaryColor),
+          borderSide:const BorderSide(color: kPrimaryColor),
         ),
       ),
     );

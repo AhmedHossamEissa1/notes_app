@@ -27,7 +27,7 @@ class myapp extends StatelessWidget {
       child: MaterialApp(
         theme: ThemeData(fontFamily: 'Poppins', brightness: Brightness.dark),
         debugShowCheckedModeBanner: false,
-        home: NotesView(),
+        home:const NotesView(),
       ),
     );
   }
